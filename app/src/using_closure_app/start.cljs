@@ -7,6 +7,13 @@
             [using-closure-app.behavior :as behavior]
             [using-closure-app.rendering :as rendering]))
 
+;; This works fine, probably it was loaded by pedestal somewhere
+(js/console.log (js/goog.require "goog.net.XhrIo"))
+;; This fails with "goog.require could not find: goog.crypt.Sha256"
+;; I would like to get it working.
+(js/console.log (js/goog.require "goog.crypt.Sha256"))
+
+
 ;; In this namespace, the application is built and started.
 
 (defn create-app [render-config]
